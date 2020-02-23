@@ -96,3 +96,22 @@ Playbook example
   roles:
     - { role: k3s_slave, tags: ['slave'] }
 ```
+
+Secrets
+-------------------
+To setup a vault password file:
+```
+$ echo "some vault passphrase" > .vaultpw
+```
+
+To add an encrypted secret:
+```
+$ echo "cluster_secret: S8p3r53cr3t" | \
+    ansible-vault encrypt --vault-password-file .vaultpw --output vars/vaultfile.yml
+Encryption successful
+```
+
+To edit it later:
+```
+$ ansible-vault edit --vault-password-file .vaultpw vars/vaultfile.yml
+```
