@@ -13,9 +13,9 @@
     dest: /etc/hosts
   notify: Reboot
 
-- name: Configuring /etc/dhcpcd.conf
-  become: True
-  template:
-    src: dhcpcd.conf.j2
-    dest: /etc/dhcpcd.conf
-  notify: Reboot
+## - name: Configuring /etc/dhcpcd.conf
+##   become: True
+##   template:
+##     src: dhcpcd.conf.j2
+##     dest: /etc/dhcpcd.conf
+##   notify: Reboot
